@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Footer from "./components/Footer";
+import { useLoginContext } from "./context/login";
+import CardPage from "./pages/card";
+import LoginPage from "./pages/login";
 
 function App() {
+  const { isLogin } = useLoginContext();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="app">
+      <section className="app-main">
+        {isLogin ? <CardPage /> : <LoginPage />}
+      </section>
+      <Footer />
+    </main>
   );
 }
 
