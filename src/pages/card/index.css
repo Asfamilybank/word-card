@@ -9,3 +9,76 @@
   gap: 20px;
   margin-top: 20px;
 }
+
+.card_list_root {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.card_list_container {
+  display: block;
+  width: 890px;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card_list {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  align-items: center;
+  transition: all 0.6s;
+  height: 600px;
+}
+
+.card {
+  position: relative;
+  width: 250px;
+  height: 500px;
+  perspective: 2000px;
+  transition: all 0.3s;
+}
+
+.card .card-front,
+.card-back,
+.card-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: all 0.5s;
+  font-size: 30px;
+}
+
+.card .card-front {
+  background-color: red;
+  color: aliceblue;
+}
+
+.card .card-back {
+  background-color: aqua;
+  transform: rotateY(-180deg);
+}
+
+.card .card-add {
+  background-color: beige;
+  cursor: pointer;
+}
+
+.card-active {
+  width: 350px;
+  height: 600px;
+}
+
+.card-active.card-is_back .card-front {
+  transform: rotateY(180deg);
+}
+
+.card-active.card-is_back .card-back {
+  transform: rotateY(0);
+}

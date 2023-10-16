@@ -11,6 +11,7 @@ const LoginPage = () => {
 
   const handleClick = useCallback(
     (name: string) => {
+      // find the user
       const user = UserList.find((item) => item.username === name);
       if (user) {
         login(user);
